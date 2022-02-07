@@ -52,14 +52,17 @@ class PostManagerTest {
         assertArrayEquals(actual, expected);
     }
 
-//    @Test
-//    void removeById() {
-//        doReturn(new PostMovie[]{americanHistory, spiderMan, peakyBlinders}).when(repo).findAll();
-//        manager.remove(2);
-//        PostMovie[] actual = {peakyBlinders, americanHistory};
-//        PostMovie[] expected = manager.lastFilm();
-//        assertArrayEquals(actual, expected);
-//    }
+    @Test
+    void removeById() {
+        doNothing().when(repo).add(any());
+        doReturn(new PostMovie[]{americanHistory, peakyBlinders}).when(repo).findAll();
+        manager.remove(2);
+        PostMovie[] actual = {peakyBlinders, americanHistory};
+        PostMovie[] expected = manager.lastFilm();
+        assertArrayEquals(actual, expected);
+
+        verify(repo).removeId(any());
+    }
 
 
 }
