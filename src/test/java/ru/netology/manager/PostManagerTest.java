@@ -54,7 +54,7 @@ class PostManagerTest {
 
     @Test
     void removeById() {
-        doNothing().when(repo).add(any());
+        doNothing().when(repo).removeId(any());
         doReturn(new PostMovie[]{americanHistory, peakyBlinders}).when(repo).findAll();
         manager.remove(2);
         PostMovie[] actual = {peakyBlinders, americanHistory};
