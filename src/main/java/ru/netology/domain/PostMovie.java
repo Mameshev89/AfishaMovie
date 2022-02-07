@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Afisha {
+public class PostMovie {
     private long id;
     private String name;
     private int year;
