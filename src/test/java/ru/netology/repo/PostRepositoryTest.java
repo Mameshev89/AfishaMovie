@@ -18,7 +18,7 @@ class PostRepositoryTest {
       repo.add(americanHistory);
       repo.add(spiderMan);
       repo.add(peakyBlinders);
-      repo.removeId(1);
+
     }
     @Test
     void findAll() {

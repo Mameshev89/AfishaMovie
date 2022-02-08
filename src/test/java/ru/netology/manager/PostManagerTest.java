@@ -54,14 +54,14 @@ class PostManagerTest {
 
     @Test
     void removeById() {
-        doNothing().when(repo).removeId(any());
+        doNothing().when(repo).removeId(2);
         doReturn(new PostMovie[]{americanHistory, peakyBlinders}).when(repo).findAll();
         manager.remove(2);
         PostMovie[] actual = {peakyBlinders, americanHistory};
         PostMovie[] expected = manager.lastFilm();
         assertArrayEquals(actual, expected);
 
-        verify(repo).removeId(any());
+        verify(repo).removeId(2);
     }
 
 

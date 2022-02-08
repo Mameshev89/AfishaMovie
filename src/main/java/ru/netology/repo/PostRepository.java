@@ -32,8 +32,8 @@ public class PostRepository {
                 tmt[index] = item;
                 index++;
             }
-
+          items=tmt;
         }
-        items = tmt;
+
     }
 }
